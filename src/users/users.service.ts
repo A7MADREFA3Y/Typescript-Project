@@ -50,5 +50,16 @@ private users = [
     }
 
 
+    create(user: {name : string, email : string, role: 'INTERN' | 'ENGINEER' | 'ADMIN' }){
+        const usersByHightestId = [...this.users].sort((a,b) => b.id)
+        const newUser = {
+            id: usersByHightestId[0].id + 1,
+            ...user
+        }
+        this.users.push(newUser)
+        return newUser
+    }
+
+
 
 }
