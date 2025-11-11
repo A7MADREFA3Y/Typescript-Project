@@ -70,6 +70,11 @@ private users = [
         return this.findOne(id)
     }
 
+    delete(id: number){
+        const removedUser = this.users.filter(user => user.id === id)
+        this.users = this.users.filter(user => user.id !== id)
+        return removedUser
+    }
 
 
 }
