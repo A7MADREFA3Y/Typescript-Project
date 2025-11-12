@@ -40,7 +40,10 @@ private users = [
 
     findAll(role? : 'INTERN' | 'ENGINEER' | 'ADMIN'){
         if(role){
-            return this.users.filter(user => user.role === role)
+            const RolesArray = this.users.filter(user => user.role === role)
+            if(RolesArray.length === 0){
+                throw new NotFoundException(`No users with role ${role} found`)
+            }
         }
         return this.users
     }
