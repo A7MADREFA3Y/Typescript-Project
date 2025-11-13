@@ -25,3 +25,9 @@ model Employee {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+enum Role {
+  INTERN
+  ENGINEER
+  ADMIN
+}
